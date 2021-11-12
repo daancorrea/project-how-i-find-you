@@ -46,6 +46,9 @@ $ cd server
 # Instale as dependências
 $ yarn
 
+# Rode as migrations com o comando
+$ yarn sequelize db:migrate
+
 # Execute a aplicação em modo de desenvolvimento
 $ yarn dev
 
@@ -65,7 +68,7 @@ $ cd web
 $ yarn
 
 # Execute a aplicação em modo de desenvolvimento
-$ yarn dev
+$ yarn start
 
 # O servidor inciará na porta:3000 - acesse <http://localhost:3000>
 ```
