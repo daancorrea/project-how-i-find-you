@@ -7,6 +7,16 @@ export const GlobalStyle = createGlobalStyle`
   padding: none;
   box-sizing: border-box;
   font-family: 'Roboto', sans-serif;
+  ::-webkit-scrollbar{
+    width: 5px;        
+  }
+  ::-webkit-scrollbar-thumb{
+    background: rgba(0,0,0,0.3);
+    
+  }
+  ::-webkit-scrollbar-track{
+    background: transparent;
+  }
   @font-face {
   font-family: 'Material Icons';
   font-style: normal;
@@ -20,5 +30,6 @@ body {
   justify-content: center;
   height: 100vh;
   width: 100vw;
+  
 }
 `;

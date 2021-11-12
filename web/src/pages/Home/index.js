@@ -44,9 +44,15 @@ export default function Home() {
   const {
     register,
     handleSubmit,
+    reset,
     formState: { errors },
   } = useForm({
     resolver: yupResolver(schema),
+    defaultValues: {
+      name: "",
+      email: "",
+      phone: "",
+    },
   });
   const onSubmit = async (dataUser) => {
     await api.post("/home", {
@@ -56,21 +62,13 @@ export default function Home() {
     });
     toast.success("Contato criado com sucesso!");
     setAddNewContact(false);
+    reset();
     loadContact();
   };
   const loadContact = async () => {
     if (userData.id) {
-      try {
-        const { data } = await api.get(`home/${userData.id}`);
-        setContact(data.contacts);
-        if (data.contacts.length === 0) {
-          throw new Error();
-        }
-      } catch (error) {
-        if (userData.id) {
-          toast.error("Não encontramos nenhum contato!");
-        }
-      }
+      const { data } = await api.get(`home/${userData.id}`);
+      setContact(data.contacts);
     }
   };
 
@@ -144,7 +142,12 @@ export default function Home() {
                 <button type="submit">
                   <span className="done">done</span>
                 </button>
-                <button onClick={() => setAddNewContact(false)}>
+                <button
+                  onClick={() => {
+                    reset();
+                    setAddNewContact(false);
+                  }}
+                >
                   <span className="close">close</span>
                 </button>
               </div>
@@ -156,7 +159,7 @@ export default function Home() {
             <PName>Nome</PName>
             <PNumber>Telefone</PNumber>
             <PEmail>Email</PEmail>
-            <POptions>Opções</POptions>
+            <POptions>Excluir</POptions>
           </TableHeader>
         )}
         <CardContainer>

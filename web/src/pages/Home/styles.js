@@ -20,10 +20,12 @@ export const Container = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
   form {
     display: flex;
     gap: 20px;
     transition: 0.3s;
+
     div {
       display: flex;
       flex-direction: column;
@@ -51,8 +53,8 @@ export const Container = styled.div`
           transition: 0.3s;
           font-size: 60px;
         }
-        @media (max-height: 920px), (max-width: 500px){
-          font-size:40px;
+        @media (max-height: 920px), (max-width: 500px) {
+          font-size: 40px;
         }
       }
       .close {
@@ -76,6 +78,7 @@ export const Container = styled.div`
     @media (max-height: 920px) {
       overflow: auto;
       transition: 0.4s;
+      margin-bottom: 30px;
     }
   }
 `;
@@ -118,7 +121,6 @@ export const Input = styled.input`
   @media (max-height: 920px), (max-width: 500px) {
     transition: 0.4s;
     overflow: auto;
-    height: auto;
     width: auto;
   }
   width: 342px;
@@ -136,7 +138,7 @@ export const CardContainer = styled.div`
   overflow: auto;
   width: 100%;
   max-height: 50%;
-  overflow-x: hidden;
+  overflow-x: hidden;  
   @media (max-width: 1240px) {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -176,7 +178,7 @@ export const POptions = styled.p`
 export const Card = styled.div`
   width: 100%;
   height: 40px;
-  background: rgba(0,0,0,0.1);
+  background: rgba(0, 0, 0, 0.1);
   margin: 5px;
   display: grid;
   grid-template-columns: 30% 30% 30% 10%;

@@ -9,6 +9,6 @@ if (userData) {
 export const api = axios.create({
   baseURL: "http://localhost:3001",
   headers: {
-    authorization: `Bearer ${userData && userData.token}`,
+    authorization: `Bearer ${userData.token}`,
   },
 });
